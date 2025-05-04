@@ -1,0 +1,10 @@
+<ul>
+    @for (item of favorites(); track item.id) {
+        <li>
+            <p>{{item.name}}</p>
+            <div class="img_container">
+                <img [src]="item.imgUrl" alt="">
+            </div>
+        </li>
+    }
+</ul>

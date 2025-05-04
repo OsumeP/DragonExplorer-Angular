@@ -1,0 +1,26 @@
+button{
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(226, 110, 2);
+    border-radius: 50%;
+    border: 2px rgb(109, 62, 1) solid;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+button:hover{
+    > svg{
+        fill: rgb(180, 57, 57);
+    }
+}
+svg{
+    width: 75%;
+    fill: white;
+}
+
+@media(min-width: 700px){
+    button{
+        width: 5rem;
+        height: 5rem;
+    }
+}

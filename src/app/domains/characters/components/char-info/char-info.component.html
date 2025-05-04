@@ -1,0 +1,17 @@
+<div class="container">
+    <app-close-btn class="close_btn" [showComponent]="showInfo"></app-close-btn>
+    <figure>
+        <img [src]="character().imgUrl" [alt]="character().name" class="char_img">
+    </figure>
+    <div class="info">
+        <h1>{{character().name}}</h1>
+        <p class="description">{{character().description}}</p>
+        <div class="flags">
+            <p> Ki: {{character().ki}}</p>
+            <p>Planet: {{planet().name}}</p>
+            <p>Gender: {{character().gender}}</p>
+            <p>Race: {{character().race}}</p>
+            <p>Affiliation: {{character().affiliation}}</p>
+        </div>
+    </div>
+</div>

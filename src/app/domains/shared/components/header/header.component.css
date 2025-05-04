@@ -1,0 +1,68 @@
+header{
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    z-index: 3;
+}
+header:hover{
+    filter: opacity(1);
+}
+span{
+    font-size: 2rem;
+    font-family: 'Dragon';
+    font-weight: 500;
+}
+.dragon{
+    color: yellow;
+}
+.explorer{
+    color: orange;
+}
+ul{
+    display: none;
+}
+li:hover{
+    opacity: .8;
+}
+
+@media(min-width: 750px){
+    header{
+        justify-content: space-between;
+    }
+    ul{
+        width: 60%;
+        color: white;
+        justify-content: space-evenly;
+        transform: skewX(-28deg);
+        background-color: black;
+        padding: 5px;
+        box-shadow: 3px 3px 0 0 rgba(0,0,0,0.8);
+    }
+    li, ul{
+        display: flex;
+        align-items: center;
+    }
+    li{
+        width: 30%;
+        justify-content: center;
+        height: 35px;
+        background-color: #1a1a1a;
+        background-image: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255, 255, 255, 0.062) 2px,rgba(255,255,255,0.062) 3px);
+        font-size: 1.3rem;
+        text-shadow: 3px 3px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    }
+    svg{
+        width: 15%;
+    }
+}
+@media(min-width: 1000px){
+    header{
+        filter: opacity(0.4);
+        transition: .5s;
+    }
+}
