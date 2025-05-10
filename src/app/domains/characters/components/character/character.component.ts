@@ -8,7 +8,7 @@ import { FavoritesService } from '@shared/services/favorites.service';
   selector: 'app-character',
   imports: [AddFavouriteBtnComponent, CharInfoComponent],
   templateUrl: './character.component.html',
-  styleUrl: './character.component.css'
+  styleUrl: './character.component.css',
 })
 export class CharacterComponent {
   @Input({required: true}) character: CharModel = new CharModel(-1,'','','','','','','');

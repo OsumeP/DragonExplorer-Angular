@@ -3,17 +3,20 @@ ul{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     grid-template-columns: 1fr;
+    justify-items: center;
 }
 .char_card{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin: 10px 0;
     position: relative;
     height:100%;
+    width: 95%;
     background-size:33px 33px;
     border-radius: 10px;
+    border: 4px #d1e0cd solid;
 }
 .char_card::after{
     content: '';
@@ -46,7 +49,7 @@ ul{
     bottom: 0;
     right: 0;
     z-index: 3;
-    margin: 5px;
+    padding: 5px;
 }
 
 @media(min-width: 750px){

@@ -81,20 +81,35 @@ h2{
 }
 
 .char_info{
-    width: 80vw;
+    width: 90vw;
     height: 90vh;
     position: fixed;
     background-color: #006d19;
-    right: 10%;
-    top: 8%;
-    z-index: 5;
+    right: 5%;
+    top: 5%;
+    z-index: 6;
     border: 8px solid #d1e0cd;
     border-radius: 13px;
+}
+.backgorund_shadow{
+    width: 200vw;
+    height: 120vh;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.644);
 }
 
 @media(min-width: 425px){
     h2{
         font-size: 2rem;
+    }
+}
+
+@media(min-width: 600px){
+    .char_info{
+        width: 80vw;
+        right: 10%;
     }
 }
 

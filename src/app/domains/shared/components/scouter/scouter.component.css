@@ -1,0 +1,53 @@
+.container{
+    position: relative;
+}
+.focus{
+    width: 90%;
+}
+.circle{
+    border: 3px solid #f7fb00;
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle_small{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.arrow{
+    width: 6%;
+    position: absolute;
+}
+.arrow_right{
+    top: 44%;
+    right: -10px;
+}
+.arrow_down{
+    right: 46%;
+    bottom: -13px;
+    transform: rotate(90deg);
+}
+.arrow_left{
+    left: -10px;
+    top: 45%;
+    transform: rotate(180deg);
+}
+.arrow_up{
+    right: 46%;
+    top: -13px;
+    transform: rotate(270deg);
+}
+@media(min-width: 750px){
+    .circle{
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    .circle_small{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}

@@ -1,11 +1,20 @@
 <div class="container">
     <app-close-btn class="close_btn" [showComponent]="showInfo"></app-close-btn>
     <figure>
-        <img [src]="character().imgUrl" [alt]="character().name" class="char_img">
+        <img [src]="getImg()" [alt]="character().name" class="char_img" [@fadeAnimation]="darkState">
+        @if (index() < character().transformations.length - 1) {
+            <app-arrow class="arrow" (click)="nextTransformationHandler()"></app-arrow>
+        }
+        @if(index() > -1){
+            <app-arrow class="arrow left_arrow" (click)="prevTransformationHandler()"></app-arrow>
+        }
+        <app-scouter class="scouter" [@moveAnimation]="moveState"></app-scouter>
     </figure>
-    <div class="info">
-        <h1>{{character().name}}</h1>
-        <p class="description">{{character().description}}</p>
+    <div class="info" [@fadeAnimation]="darkState" [@bgAnimation]="bgState">
+        <h1>{{getName()}}</h1>
+        <div class="description">
+            <p>{{character().description}}</p>
+        </div>
         <div class="flags">
             <p> Ki: {{character().ki}}</p>
             <p>Planet: {{planet().name}}</p>
