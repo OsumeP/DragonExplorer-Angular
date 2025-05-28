@@ -11,10 +11,13 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { CharFiltersComponent } from "../../components/char-filters/char-filters.component";
+import { EmptyComponent } from "../../../shared/components/empty/empty.component";
+import { LoadingComponent } from "../../../shared/components/loading/loading.component";
 
 @Component({
   selector: 'app-list',
-  imports: [CharacterComponent, FavoriteComponent, FavoritesBtnComponent],
+  imports: [CharacterComponent, FavoriteComponent, FavoritesBtnComponent, CharFiltersComponent, EmptyComponent, LoadingComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
   animations: [
@@ -30,7 +33,9 @@ export class ListComponent {
   characters = signal<CharModel[]>([]);
   showFavourites = signal(false);
   characterService = inject(CharactersService);
+  filtered = signal(false);
   nextUrl = '';
+  loading = signal(false);
   loadingCharacters = signal(false);
 
   constructor() {
@@ -55,7 +60,7 @@ export class ListComponent {
   }
 
   async getNewCharacters(): Promise<void> {
-    if(this.nextUrl == '') return;
+    if(this.filtered() || this.nextUrl == '') return;
     this.loadingCharacters.set(true);
      await this.characterService.getCharacters(this.nextUrl).subscribe({
       next: (response) =>{

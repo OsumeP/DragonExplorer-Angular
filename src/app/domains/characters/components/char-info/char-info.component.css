@@ -48,6 +48,7 @@ figure{
     width: 15%;
     right: -18px;
     top: 40%;
+    cursor: pointer;
 }
 .left_arrow{
     left: -18px;
@@ -69,7 +70,6 @@ figure{
 }
 
 h1{
-    font-family: "Dragon";
     font-weight: 100;
 }
 

@@ -1,0 +1,30 @@
+<div class="container">
+    <app-search-bar class="search" (addName)="addName($event)"></app-search-bar>
+    <div class="boxes">
+        <div class="filters">
+            <p>Gender</p>
+            <app-option-box 
+            [color]="'#0e01c4'"
+            [options]="['Male', 'Female', 'Unknown']"
+            (addFilter)="addGender($event)"
+            ></app-option-box>
+        </div>
+        <div class="filters">
+            <p>Race</p>
+            <app-option-box
+                [color]="'#fffb00'"
+                [options]="['Human','Saiyan','Namekian','Majin','Frieza Race','Android','Jiren Race','God','Angel','Evil','Nucleico','Nucleico benigno', 'Unknown']"
+                (addFilter)="addRace($event)">
+            </app-option-box>
+        </div>
+        <div class="filters">
+            <p>Affiliation</p>
+            <app-option-box
+                [color]="'#ff3240'"
+                [options]="['Z Fighter','Red Ribbon Army','Namekian Warrior','Freelancer','Army of Frieza','Pride Troopers','Assistant of Vermoud','God Assistant of Beerus','Villain','Other']"
+                (addFilter)="addAffiliation($event)">
+            </app-option-box>
+        </div>
+    </div>
+    <button class="submit" (click)="searchFiltersHandler()">Apply Filters</button>
+</div>

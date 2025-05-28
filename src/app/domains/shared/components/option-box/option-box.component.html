@@ -1,0 +1,16 @@
+<ul (click)="clickHandler()" [class]="{open: showOptions(), options: true}">
+    @if (showOptions()) {
+        @for (item of options; track $index) {
+            <li (click)="selectOptionHandler(item)">
+                <p [style]="`filter: drop-shadow(4px 4px 0 ${color})`"
+                > <span>{{item}}</span></p>
+            </li>
+        }
+    }@else {
+        <li>
+            <p [style]="`filter: drop-shadow(4px 4px 0 ${color});`">
+                <span>{{selectedOption()}}</span>
+            </p>
+        </li>
+    }
+</ul>

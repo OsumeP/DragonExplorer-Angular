@@ -1,9 +1,18 @@
+<app-char-filters [characters]="characters" [filtered]="filtered" [loading]="loading"></app-char-filters>
+@if (loading()) {
+    <app-loading></app-loading>
+}
+@else if (characters().length != 0) {
 <ul>
     @for (character of characters(); track character.id) {
-        <app-character [character]="character" class="char_card" @fadeIn></app-character>
+    <app-character [character]="character" class="char_card" @fadeIn></app-character>
     }
 </ul>
+}
+@else {
+    <app-empty></app-empty>
+}
 @if (showFavourites()) {
-    <app-favorite class="app_favourite"></app-favorite>
+<app-favorite class="app_favourite"></app-favorite>
 }
 <app-favorites-btn class="favorites_btn" (click)="showFavoriteHandler()"></app-favorites-btn>
