@@ -75,7 +75,6 @@ export class ListComponent {
         this.loadingCharacters.set(false);
       }
     })
-    this.loadingCharacters.set(false);
   }
 
   bottomReached(): boolean {
